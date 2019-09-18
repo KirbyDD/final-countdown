@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>Working</h1>
   </div>
 </template>
 
@@ -8,12 +8,7 @@
 export default {
   name: 'PhotoContainer',
   props: {
-    msg: String
-  },
-  methods: {
-    handleSubmit: (e) => {
-      console.log(e.target.previousSibling.value)
-    }
+    photos: Array
   }
 }
 </script>
