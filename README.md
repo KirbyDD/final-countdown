@@ -4,7 +4,7 @@
 
 ## Description
 
-This project is a simple site, built with Vue.js, that displays popular a collection of photos. The user may utilize the search feature and will be displayed a collection of photos related to the keyword entered.
+This project is a simple site, built with Vue.js, that displays a collection of user searched photos. The user may utilize the search feature and will be displayed a collection of photos related to the keyword entered.
 
 ## Emphasis of the Project
 
