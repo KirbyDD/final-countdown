@@ -1,14 +1,22 @@
 <template>
-  <div class="hello">
-    <h1>Working</h1>
-  </div>
+  <main class="hello">
+    <h2>Working</h2>
+    <section v-bind:key="photo.id" v-for="photo in photos">
+      <Photo v-bind:photo="photo"/>
+    </section>
+  </main>
 </template>
 
 <script>
+import Photo from "./Photo"
+
 export default {
   name: 'PhotoContainer',
   props: {
     photos: Array
+  },
+  components: {
+    Photo
   }
 }
 </script>
