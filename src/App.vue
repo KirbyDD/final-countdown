@@ -1,24 +1,26 @@
 <template>
   <div>
-    <img src="https://wallpapermemory.com/uploads/654/gallery-background-hd-1920x1200-193325.jpg"  class="background"/>
-  <div id="app">
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-    <h1>Welcome to Final-Countdown</h1>
+    <img
+      src="https://wallpapermemory.com/uploads/654/gallery-background-hd-1920x1200-193325.jpg"
+      class="background"
+    >
+    <div id="app">
+      <h1>Welcome to Final-Countdown</h1>
       <h2>Enter search criteria to display photos.</h2>
-      <div class='search'>
-      <input placeholder="Search..." :value="searchValue" v-on:change="handleChange"/>
-      <button v-on:click="handleSubmit">Submit</button>
+      <div class="search">
+        <input placeholder="Search..." :value="searchValue" v-on:change="handleChange">
+        <button v-on:click="handleSubmit">Submit</button>
       </div>
-    <PhotoContainer v-bind:photos='photos'/>
-  </div>
+      <PhotoContainer v-bind:photos="photos"/>
+    </div>
   </div>
 </template>
 
 <script>
-import PhotoContainer from './components/PhotoContainer.vue'
+import PhotoContainer from "./components/PhotoContainer.vue";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
     PhotoContainer
   },
@@ -26,27 +28,30 @@ export default {
     return {
       photos: [],
       searchValue: ""
-    }
+    };
   },
   methods: {
     handleSubmit() {
       const searchText = this.searchValue;
-      const url = 'https://api.unsplash.com/search/photos/?query=' + searchText + '&client_id=c6eeeedc8c658881d7eba602b260a5faeaed1be2144c5827eaf628940b049428'
+      const url =
+        "https://api.unsplash.com/search/photos/?query=" +
+        searchText +
+        "&orientation=landscape&client_id=c6eeeedc8c658881d7eba602b260a5faeaed1be2144c5827eaf628940b049428";
       fetch(url)
-      .then(response => response.json())
-      .then(data => this.photos = data.results)
-      this.searchValue = ''
+        .then(response => response.json())
+        .then(data => (this.photos = data.results));
+      this.searchValue = "";
     },
     handleChange(e) {
-      this.searchValue = e.target.value
+      this.searchValue = e.target.value;
     }
   }
-}
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
