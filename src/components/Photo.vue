@@ -1,6 +1,6 @@
 <template>
   <article>
-    <img :src="photo.urls.regular" />
+    <img :src="photo.urls.small" />
   </article>
 </template>
 
